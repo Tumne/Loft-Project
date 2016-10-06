@@ -1,3 +1,5 @@
+[![Build Status](https://img.shields.io/travis/npm/npm/master.svg)]
+
 # LOFT - Project
 
 ## Solution 1:
