@@ -23,8 +23,9 @@ var app = module.exports = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'public'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 app.use(morgan('dev'));
 app.use(bodyParser());
 app.use(methodOverride());
@@ -47,9 +48,14 @@ if (env === 'production') {
  * Routes
  */
 
+// app.use(function(req, res) {
+//     // Use res.sendfile, as it streams instead of reading the file into memory.
+//     res.sendfile(__dirname + '/public/index.html');
+// });
+
 // serve index and view partials
 app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
+app.get('/partials/*', routes.partials);
 
 // JSON API
 app.get('/api/users', api.getAllUsers);
