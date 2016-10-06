@@ -1,4 +1,4 @@
-[Build Status](https://manulifelookingforward.files.wordpress.com/2015/10/loft-logo.png)
+<img src="https://manulifelookingforward.files.wordpress.com/2015/10/loft-logo.png">
 
 # LOFT - Project
 
