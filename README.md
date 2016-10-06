@@ -1,6 +1,6 @@
 # LOFT - Project
 
-## Installation and Usage
+## Question 1:
 
 Clone the repository, run `npm install` to grab the dependencies.
 
@@ -9,6 +9,8 @@ Clone the repository, run `npm install` to grab the dependencies.
 Runs like a typical express app:
 
     node app.js
+
+## Question 2:
 
 ```javascript
 var oldUnload = window.onbeforeunload;
