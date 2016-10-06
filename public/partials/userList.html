@@ -1,0 +1,26 @@
+
+<div class="toolbar">
+  <div class="filters">
+    
+    <p>Sort by: </p>
+    <div class="select-style">
+      <select ng-model="order">
+          <option value="">none</option>
+          <option value="name">name</option>
+      </select>
+    </div>
+    <p>Filter by: </p> 
+    <div class="select-style">
+      <select ng-model="filter">
+          <option value="">none</option>
+          <option ng-repeat="option in categories" ng-value="option">{{option}}</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="wrap">
+  <usertemplate items="users" order="order" filter="filter"></usertemplate>
+</div>

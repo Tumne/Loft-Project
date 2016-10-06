@@ -1,0 +1,43 @@
+<div>
+  <div class="grey-box info" ng-repeat="item in items | filter: {category: filter} | orderBy: order" >
+
+    <div class="left-column">
+        {{test}}
+        <a class="thumbnail" ui-sref="user({ id: item._id})">
+            <img ng-src="{{item.picture}}" />
+        </a>
+    </div>
+    <div class="center-column">
+        <h2><i>{{item.name}}</i></h2>
+        <p>{{calculateAge(item.date_of_birth)}} years old</p>
+        <p><strong>{{capitalizeFirstLetter(item.gender)}} | {{capitalizeFirstLetter(item.category)}}</strong></p>
+        <br>
+        <br>
+        <br>
+        <p>Biography</p> 
+        <p>{{item.bio}}</p>
+        <br>        
+        <br>        
+        <br>        
+        <p>{{item.address}}</p>
+        <p>{{item.phone}}</p>
+
+    </div>
+    <div class="right-column">
+        <div class="balance-div">
+            <div class="balance-box">
+                <p>Balance: </p>
+                <h3 class="text-center">$&nbsp;{{item.balance_cad}}</h3>
+            </div>
+            <div class="tag-box">
+                <span ng-repeat="tag in item.tags track by $index"> 
+                    <span class="text-seperator">{{$first ? '' : '| '}}</span>
+                    {{tag}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+</div>

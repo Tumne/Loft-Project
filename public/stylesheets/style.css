@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #757fde;
+  text-decoration: none;
+}
+
+p {
+  margin:0;
+}
+
+.header {
+  padding: 20px;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height: 215px;
+  background: white;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.toolbar {
+  position:fixed;
+  top:170px;
+  left: 10px;
+  right: 10px;
+  padding: 20px;
+  background: #f6f7ff;
+  border: 2px solid #404dc9;
+  color: #757fde;
+}
+
+.select-style {
+    float:left;
+    border: 2px solid #2cb051;
+    width: 120px;
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.toolbar p, .toolbar a {
+  float:left;
+  margin:0;
+  line-height: 27px;
+  padding: 0 10px;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 100%;
+    display:block;
+    border: none;
+    box-shadow: none;
+    color: #01691e;
+    background: white;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+.wrap {
+  margin-top: 255px;
+  padding:0 40px;
+}
+
+.filters {
+      display: table;
+      margin:0 auto;
+}
+
+.grey-box {
+  background: #fbfbfb;
+  border: 2px solid grey;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.info {
+    height: 275px;
+}
+
+
+.left-column, .center-column, .right-column  {
+  height: 275px;
+  float:left;
+  display:block;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.left-column, .right-column  {
+  width: 20%;
+}
+
+.center-column {
+  width: 60%;
+}
+
+.text-center {
+  text-align:center;
+}
+
+.thumbnail {
+    line-height: 275px;
+}
+.thumbnail img {
+   margin: auto;
+   vertical-align: middle; 
+   display: inline-block;
+} 
+
+.balance-box {
+  color: #88a6bb;
+  background: #e2e9ee;
+  height: 80px;
+  padding: 10px;
+}
+.balance-box h3 {
+  color: black;
+}
+
+.tag-box {
+  margin: 10px 0;
+}
+
+.text-seperator {
+  color: #e2e9ee;
+}
+
+.balance-div {
+  display: table-cell;
+  vertical-align: middle;
+  width: 255px;
+  height: 275px;
+}
+
+/* CSS custom chevron */
+
+.chevron::before {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+
+.chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+  margin-top: 7px;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/" />
+    <title>Loft</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/javascripts/app.js"></script>
+    <script src="/javascripts/services/users-service.js"></script>
+    <script src="/javascripts/controllers/userList-controller.js"></script>
+    <script src="/javascripts/controllers/user-controller.js"></script>
+    <script src="/javascripts/directives/userTemplate-directive.js"></script>
+
+  </head>
+
+  <body ng-app="loft">
+    <div class="header">
+      <img class="logo" src="/images/Loft_logo.jpg" alt="">
+    </div>
+    <ui-view></ui-view>
+
+  </body>
+</html>
