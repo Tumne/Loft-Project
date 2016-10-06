@@ -3,7 +3,6 @@ angular.module('loft')
   $scope.categories = [];
 
   Users.getAllUsers(function(res) {
-    console.log(res);
     $scope.users = res;
     angular.forEach($scope.users, function(value, key) {
       if($scope.categories.indexOf(value.category) === -1){
