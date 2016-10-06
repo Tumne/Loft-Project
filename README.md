@@ -56,7 +56,7 @@ app.controller("appCtrl", function($scope, $http, $q, apiService) {
 
     // callback function
     parseFeed(3, function(res){
-      // Handle response here (i.e. console.log(res) );
+      // Handle response here
     });
 
 });
