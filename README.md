@@ -52,7 +52,7 @@ app.factory("apiService", function($http, $q){
   
 });
 
-app.controller("appCtrl", function($scope, $http, $q, apiService) {
+app.controller("appCtrl", function($q, apiService) {
 
     function parseFeed(id, callback) {
       var promises = [ apiService.getBalance(id), apiService.getRange(id) ];
