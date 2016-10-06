@@ -1,6 +1,6 @@
 # LOFT - Project
 
-## How to use angular-express-seed
+## Installation and Usage
 
 Clone the repository, run `npm install` to grab the dependencies.
 
