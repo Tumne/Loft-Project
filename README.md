@@ -9,20 +9,56 @@ Runs like a typical express app:
 
 ## Solution 2:
 
+
 ```javascript
-angular.module(app, []) .controller('appCtrl', function ($http, $q) {
-  function parseFeed(id) {
-    var deferred = $q.defer(); 
-    $http.get('/json/' + id) 
-    .success(function (balance) {
-      $http.get('/json/' + id)
-      .success(function (range) {
-        var response = { balance: balance, range: range };
-        deferred.resolve(response); 
-      });
-    });
-    return deferred.promise; 
+
+var app = angular.module("app", []);
+
+app.factory("apiService", function($http, $q){
+
+  return {
+    getBalance: function(id) {
+      return $http.get('/json/' + id).then(function(res) {
+        if (res === "something else"){
+           return $q.reject("Invalid data");
+        }
+        return res;
+      })
+      .catch(function(err){
+         return $q.reject("Data not available");
+      })
+    },
+    getRange: function(id) {
+      return $http.get('/json/' + id).then(function(res) {
+        if (res === "something else"){
+           return $q.reject("Invalid data");
+        }
+        return res;
+      })
+      .catch(function(err){
+         return $q.reject("Data not available");
+      })
+    },
   }
-  parseFeed(3); 
+  
 });
+
+app.controller("appCtrl", function($scope, $http, $q, apiService) {
+
+    function parseFeed(id, callback) {
+      var promises = [ apiService.getBalance(id), apiService.getRange(id) ];
+
+      $q.all(promises).then(function(res){
+        var result = { balance: res[0].data, range: res[1].data };
+        callback(result);
+      });
+    }
+
+    // callback function
+    parseFeed(3, function(res){
+      // Handle response here (i.e. console.log(res) );
+    });
+
+});
+
 ```
