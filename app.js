@@ -47,11 +47,7 @@ if (env === 'production') {
 /**
  * Routes
  */
-
-// app.use(function(req, res) {
-//     // Use res.sendfile, as it streams instead of reading the file into memory.
-//     res.sendfile(__dirname + '/public/index.html');
-// });
+ 
 
 // serve index and view partials
 app.get('/', routes.index);
