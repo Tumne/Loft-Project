@@ -10,7 +10,7 @@ Install dependencies
 
     npm install
 
-Runs and navigate to 'http://localhost:3000/':
+Runs and navigate to `http://localhost:3000/`:
 
     node app.js
 
