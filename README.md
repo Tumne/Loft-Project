@@ -10,11 +10,19 @@ Runs like a typical express app:
 ## Solution 2:
 
 ```javascript
-var oldUnload = window.onbeforeunload;
-window.onbeforeunload = function() {
-    saveCoverage();
-    if (oldUnload) {
-        return oldUnload.apply(this, arguments);
-    }
-};
+angular.module(app, []) .controller('appCtrl', function ($http, $q) {
+  function parseFeed(id) {
+    var deferred = $q.defer(); 
+    $http.get('/json/' + id) 
+    .success(function (balance) {
+      $http.get('/json/' + id)
+      .success(function (range) {
+        var response = { balance: balance, range: range };
+        deferred.resolve(response); 
+      });
+    });
+    return deferred.promise; 
+  }
+  parseFeed(3); 
+});
 ```
