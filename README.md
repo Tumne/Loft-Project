@@ -2,7 +2,14 @@
 
 ## Solution 1:
 
-Clone the repository, run `npm install` to grab the dependencies.
+Clone the repository
+    
+    git clone https://github.com/Tumne/Loft-Project.git
+
+Install dependencies
+
+    npm install
+
 Runs like a typical express app:
 
     node app.js
